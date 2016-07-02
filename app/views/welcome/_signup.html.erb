@@ -1,0 +1,114 @@
+<div class="modal fade" id="sign_up" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-md">
+    <div class="modal-content">
+			<button class="close" style="margin: 10px" data-dismiss="modal">x</button>
+		<div class="t2t-signin-logo">
+			<%= image_tag 'T2T_circleforsignup.png', :alt => 'brand', :id => 'circle-logo', class: 'img-responsive' %>
+		</div>
+		<div id="signin-errors" class="alert alert-danger">
+		</div>
+        <div class="t2t-tabs">
+            <ul id="t2t-tab" class="nav nav-tabs">
+              <li class="active" style="width: 50%; text-align: center"><a href="#login" data-toggle="tab">Sign In</a></li>
+              <li class="" style="width: 50%; text-align: center"><a href="#register" data-toggle="tab">Register</a></li>
+            </ul>
+        </div>
+      <div class="modal-body">
+        <div id="t2tTabContent" class="tab-content">
+        
+        <div class="tab-pane fade active in" id="login">
+			<%= form_for(resource, as: resource_name, url: session_path(resource_name), class: 'form-horizontal', :html => {:id => 'signin-form'}) do |f| %>
+            <!-- Sign In Form -->
+            <div class="control-group t2t-control-group">
+				<div class="controls">
+			    	<button id="fb-login" name="fb-login" class="btn btn-primary btn-block">Login With facebook</button>
+				</div>
+              </div>
+			
+            <!-- Text input-->
+            <div class="control-group t2t-control-group">
+				<div class="controls t2t-controls" style="display: inline">
+					<%= image_tag 'envelope.svg', :alt => '', class: 'input-icon'%>
+			    	<%= f.email_field :email, autofocus: true, class: 'form-control input-medium center-block t2t-signin-control email', placeholder: 'E-Mail' %>
+				</div>
+              </div>
+            <!-- Password input-->
+            <div class="control-group t2t-control-group">
+              <div class="controls t2t-controls">
+				  <%= image_tag 'key.svg', :alt => '', class: 'input-icon'%>
+				  <%= f.password_field :password, autocomplete: "off", class: 'form-control input-medium center-block t2t-signin-control', placeholder: 'Password' %>
+              </div>
+            </div>
+            <!-- Button -->
+            <div class="control-group">
+              <div class="controls">
+				  <%= f.submit "LOGIN", class: 'btn btn-success btn-block login-btn' %>
+              </div>
+            </div>
+            <!-- Multiple Checkboxes (inline) -->
+              <div class="control-group t2t-control-group">
+				<div class="row">
+                <div class="controls col-md-6 inline text-center" style="margin-top: 15px;">
+				<% if devise_mapping.rememberable? -%>
+		        <%= f.check_box :remember_me %>
+		        <%= f.label :remember_me, class: 'inline' %>
+				<% end -%>
+				</div>
+				
+				<div class="col-md-6">
+					<%= link_to "Forgot your password?", new_password_path(resource_name), class: 'btn btn-info btn-block', id: 't2t-forgot-pass' %>
+			</div>
+		      </div>
+			 </div>
+
+		<% end -%>
+
+            
+        </div>
+        <div class="tab-pane fade" id="register">
+					<%= form_for(resource, as: resource_name, url: registration_path(resource_name), class: 'form-horizontal', :html => {:id => 'signup-form'}) do |f| %>
+					  
+					  
+		              <!-- Sign In Form -->
+		              <div class="control-group t2t-control-group">
+		  				<div class="controls">
+		  			    	<button id="fb-login" name="fb-login" class="btn btn-primary btn-block">Sign Up With facebook</button>
+		  				</div>
+		                </div>
+			
+		              <!-- Text input-->
+		              <div class="control-group t2t-control-group">
+		  				<div class="controls t2t-controls" style="display: inline">
+		  					<%= image_tag 'envelope.svg', :alt => '', class: 'input-icon'%>
+		  			    	<%= f.email_field :email, autofocus: true, class: 'form-control input-medium center-block t2t-signin-control email', placeholder: 'E-Mail' %>
+		  				</div>
+		                </div>
+
+			            <!-- Password input-->
+			            <div class="control-group t2t-control-group">
+			              <div class="controls t2t-controls">
+							  <%= image_tag 'key.svg', :alt => '', class: 'input-icon'%>
+							  <%= f.password_field :password, autocomplete: "off", class: 'form-control input-medium center-block t2t-signin-control', placeholder: 'Password' %>
+			              </div>
+			            </div>
+
+						<!-- Confirmation Password input-->
+		            <div class="control-group t2t-control-group">
+		              <div class="controls t2t-controls">
+						  <%= image_tag 'check-mark.svg', :alt => '', class: 'input-icon'%>
+					    <%= f.password_field :password_confirmation, autocomplete: "off", class: 'form-control input-medium center-block t2t-signin-control', placeholder: 'Confirm Password' %>
+					  </div>
+				  </div>
+
+            <div class="control-group">
+              <div class="controls">
+				  <%= f.submit "SIGN UP", class: 'btn btn-success btn-block login-btn' %>
+              </div>
+            </div>
+		<% end %>
+      </div>
+    </div>
+      </div>
+    </div>
+  </div>
+</div>

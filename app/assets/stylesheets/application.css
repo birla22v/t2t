@@ -1,15 +1,138 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any styles
- * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
- * file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+#t2t-video {
+	position: absolute;
+	z-index: -1;
+}
+
+.navbar-left {
+	margin-left: 15px;
+}
+.navbar-right.t2t-right {
+	margin-top: 20px;
+	margin-right: 15px;
+}
+.t2t-b1 {
+	height: 60px;	
+}
+
+.navbar-brand {
+	padding: 0px;
+}
+
+button.navbar-toggle.ion-navicon {
+	padding: 0;
+	font-size: 40px;
+	font-weight: bold;
+	color: white;
+	text-shadow: 2px 2px 8px #000;
+	z-index: 1001;
+	line-height: 30px;
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+
+.navbar-brand>img{
+	height: 60px;
+	margin: 0 auto;
+}
+
+.navbar-brand.t2t-brand {
+	height: auto;
+	padding: 0px;
+}
+
+.t2t-nav-links>a {
+	color:white;
+	text-shadow: 2px 2px 8px #000;
+}
+
+.nav>.t2t-nav-links>a:active,
+.nav>.t2t-nav-links>a:focus,
+.nav>.t2t-nav-links>a:hover
+{
+	background-color: transparent;
+	text-decoration: none;
+	border: 2px solid #FFF;
+	border-radius: 10px;
+	color:white;
+	text-shadow: 2px 2px 8px #000;
+	outline: none;
+	
+}
+
+
+.t2t-buttons {
+	text-align: center;
+	margin-top: 5px;
+	
+}
+
+.t2t-button {
+	padding: 0px 5px;
+	margin: 20px 10px;
+	background-color: gray;
+	font-size: 30px;
+	border-radius: 50%;
+	-moz-border-radius: 50%;
+	color: #fff;
+	height: 40px;
+    width: 40px;
+    line-height: 40px;
+	text-align: center;
+	border: 2px solid white;
+}
+
+.ion-android-person-add:hover {
+	background-color: #26CE7B;
+	color: #fff;
+}
+.ion-chatboxes:hover {
+	background-color: #F74957;
+	color: #FFF;
+	
+}
+.ion-camera:hover {
+	background-color: #FEE938;
+	color: #FFF;
+}
+
+.t2t-signin-logo>img {
+	margin: 50px auto; 
+	height: 50px; 
+	width: 50px; 
+}
+
+
+.control-group.t2t-control-group {
+	margin: 20px auto;
+}
+
+.input-icon {
+	height: 30px;
+	width: 35px;
+	position: absolute;
+	margin-top: 10px;
+	margin-left: 10px;
+}
+
+.btn.btn-success.login-btn,
+.btn.btn-primary#fb-login,
+.form-control.input-medium.t2t-signin-control {
+	border-radius: 50px;
+	height: 50px;
+}
+
+.form-control.input-medium.t2t-signin-control {
+	text-indent: 38px;
+}
+
+
+.btn.btn-success.btn-block.login-btn {
+	background-color: #ffcd68;
+	border-color: #ffcd68;
+}
+
+#t2t-forgot-pass {
+	margin: 10px auto;
+	border-radius: 50px;
+}
+

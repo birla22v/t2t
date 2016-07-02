@@ -1,0 +1,51 @@
+<header class="t2t-navbar">
+	<nav class="navbar navbar-static-top">
+		<div class="navbar-left">
+			<div class="t2t-b1">
+				<a class="navbar-brand t2t-brand" href="#">
+					<%= image_tag 'Slogan_helveticanueu_shadow.png', :alt => 'brand', :id => 'navbar-logo' %>
+				</a>
+				<button type="button" class="navbar-toggle collapsed ion-navicon" data-toggle="collapse" data-target="#t2t-navright" aria-expanded="false" aria-controls="navbar">
+				</button>
+			</div>
+			<div class="t2t-buttons">
+				<a href="#">
+					<span class="t2t-button ion-android-person-add"></span>
+				</a>
+				<a href="#">
+				 	<span class="t2t-button ion-chatboxes"></span>
+				</a>
+				<a href="#">
+				  	<span class="t2t-button ion-camera"></span>
+				</a>
+			</div>
+		</div>
+		
+		
+		
+		<div id="t2t-navright" class="navbar-collapse collapse">
+	        <ul class="nav navbar-nav navbar-right t2t-right">
+	          <li class="t2t-nav-links"><a href="#">Become a tour guide</a></li>
+			  
+			  <li class="dropdown t2t-nav-links">
+			  	<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" 				aria-expanded="false">Help<span class="caret"></span></a>
+			              <ul class="dropdown-menu" role="menu">
+			                <li><a href="#">What is T2T?</a></li>
+			                <li><a href="#">How it works</a></li>
+			                <li><a href="#">FAQ</a></li>
+			                <li><a href="#">Contact</a></li>
+			              </ul>
+			            </li>
+	          <li class="t2t-nav-links">
+				  <% if user_signed_in? -%>
+				  	<%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+				  <% else -%>
+				  	<%= link_to "Sign Up/Login", "#sign_up", "data-toggle" => "modal" %>
+				  <% end -%>
+			  </li>
+				<!-- <li class="t2t-nav-links"><%= link_to "Login", "#login", "data-toggle" => "modal" %></li> -->
+	        </ul>
+		</div>
+		
+	</nav>
+</header>

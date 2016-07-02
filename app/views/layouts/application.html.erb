@@ -1,17 +1,29 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>t2t</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
+  	<title>	
+		<% if content_for?(:title) %>
+	  		<%= yield(:title) %>
+		<% else %>
+	  	<%# default title %>
+		<%= 'T2T - Travel Together'%>
+	<% end %>
+	</title>
+	<%= favicon_link_tag 'favicon.png' %>
+  	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+	<%= stylesheet_link_tag 'http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css' %>
+	<%= stylesheet_link_tag 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css' %>
+	<%= javascript_include_tag 'https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js' %>
+	<%= javascript_include_tag 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js' %>
+	<%= javascript_include_tag 'jquery.mb.YTPlayer.min' %>
+	<%= stylesheet_link_tag 'jquery.mb.YTPlayer.min' %>
+  	<%= csrf_meta_tags %>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width = device-width, initial-scale = 1">
 </head>
 <body>
-
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
-
-<%= yield %>
+	<%= yield %>
 
 </body>
 </html>
