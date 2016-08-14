@@ -15,16 +15,16 @@
         </div>
       <div class="modal-body">
         <div id="t2tTabContent" class="tab-content">
-        
+
         <div class="tab-pane fade active in" id="login">
 			<%= form_for(resource, as: resource_name, url: session_path(resource_name), class: 'form-horizontal', :html => {:id => 'signin-form'}) do |f| %>
             <!-- Sign In Form -->
             <div class="control-group t2t-control-group">
 				<div class="controls">
-			    	<button id="fb-login" name="fb-login" class="btn btn-primary btn-block">Login With facebook</button>
+          <%=link_to '<button id="fb-login" name="fb-login" class="btn btn-primary btn-block">Login With facebook</button>'.html_safe, user_omniauth_authorize_path(:facebook) %>
 				</div>
               </div>
-			
+
             <!-- Text input-->
             <div class="control-group t2t-control-group">
 				<div class="controls t2t-controls" style="display: inline">
@@ -54,7 +54,7 @@
 		        <%= f.label :remember_me, class: 'inline' %>
 				<% end -%>
 				</div>
-				
+
 				<div class="col-md-6">
 					<%= link_to "Forgot your password?", new_password_path(resource_name), class: 'btn btn-info btn-block', id: 't2t-forgot-pass' %>
 			</div>
@@ -63,19 +63,19 @@
 
 		<% end -%>
 
-            
+
         </div>
         <div class="tab-pane fade" id="register">
 					<%= form_for(resource, as: resource_name, url: registration_path(resource_name), class: 'form-horizontal', :html => {:id => 'signup-form'}) do |f| %>
-					  
-					  
+
+
 		              <!-- Sign In Form -->
 		              <div class="control-group t2t-control-group">
 		  				<div class="controls">
-		  			    	<button id="fb-login" name="fb-login" class="btn btn-primary btn-block">Sign Up With facebook</button>
+		  			    	<%=link_to '<button id="fb-login" name="fb-login" class="btn btn-primary btn-block">Sign Up With facebook</button>'.html_safe, user_omniauth_authorize_path(:facebook) %>
 		  				</div>
 		                </div>
-			
+
 		              <!-- Text input-->
 		              <div class="control-group t2t-control-group">
 		  				<div class="controls t2t-controls" style="display: inline">
